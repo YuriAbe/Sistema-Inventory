@@ -1,6 +1,6 @@
 # 📦 Inventário Pro — SPA Angular
 
-Frontend de gerenciamento de inventário desenvolvido com **Angular 17**, **Angular Material** e **TailwindCSS**, consumindo a API REST Spring Boot disponível em [github.com/Prof-JamesCampos/api](https://github.com/Prof-JamesCampos/api).
+Frontend de gerenciamento de inventário desenvolvido com **Angular 17**, **Angular Material** e **TailwindCSS**, consumindo a API REST Spring Boot disponível no projeto.
 
 ---
 
@@ -152,9 +152,3 @@ src/app/
 | GET | `/api/categorias` | Lista categorias |
 
 ---
-
-## 📬 Entrega
-
-Prazo: **29/05/2026**
-E-mail: `atividadesjames@gmail.com`
-Assunto: `Atividade Final API - 5º Semestre`
