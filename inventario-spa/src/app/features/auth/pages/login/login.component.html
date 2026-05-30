@@ -1,0 +1,94 @@
+<div class="min-h-screen flex items-center justify-center bg-dark-950 dark:bg-dark-950 light-mode:bg-gray-100 relative overflow-hidden">
+
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary-400/5 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-primary-500/8 blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-dark-700/30"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-dark-800/40"></div>
+  </div>
+
+  <!-- Login Card -->
+  <div class="relative w-full max-w-md mx-4 animate-fade-in">
+    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 shadow-card-dark">
+
+      <!-- Logo / Brand -->
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-400/10 border border-primary-400/30 rounded-2xl mb-4">
+          <mat-icon class="text-primary-400 !text-4xl !w-10 !h-10">inventory_2</mat-icon>
+        </div>
+        <h1 class="text-2xl font-bold text-white tracking-tight">Inventário Pro</h1>
+        <p class="text-dark-300 text-sm mt-1">Sistema de Gerenciamento de Estoque</p>
+      </div>
+
+      <!-- Error Alert -->
+      @if (errorMessage()) {
+        <div class="mb-6 p-4 bg-red-900/30 border border-red-700/50 rounded-xl flex items-start gap-3 animate-slide-up">
+          <mat-icon class="text-red-400 flex-shrink-0 !text-lg mt-0.5">error_outline</mat-icon>
+          <p class="text-red-300 text-sm">{{ errorMessage() }}</p>
+        </div>
+      }
+
+      <!-- Form -->
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="space-y-4">
+
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="email" formControlName="email"
+                 placeholder="admin@fatec.sp.gov.br" autocomplete="email">
+          <mat-icon matPrefix class="text-dark-400 mr-2">mail_outline</mat-icon>
+          @if (emailCtrl.invalid && emailCtrl.touched) {
+            <mat-error>
+              @if (emailCtrl.hasError('required')) { E-mail é obrigatório }
+              @else if (emailCtrl.hasError('email')) { E-mail inválido }
+            </mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Senha</mat-label>
+          <input matInput [type]="hidePassword() ? 'password' : 'text'"
+                 formControlName="senha" autocomplete="current-password">
+          <mat-icon matPrefix class="text-dark-400 mr-2">lock_outline</mat-icon>
+          <button mat-icon-button matSuffix type="button"
+                  (click)="hidePassword.set(!hidePassword())"
+                  [attr.aria-label]="hidePassword() ? 'Mostrar senha' : 'Ocultar senha'">
+            <mat-icon class="text-dark-400">{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          @if (senhaCtrl.invalid && senhaCtrl.touched) {
+            <mat-error>
+              @if (senhaCtrl.hasError('required')) { Senha é obrigatória }
+              @else if (senhaCtrl.hasError('minlength')) { Mínimo 6 caracteres }
+            </mat-error>
+          }
+        </mat-form-field>
+
+        <button
+          mat-flat-button
+          type="submit"
+          [disabled]="loading()"
+          class="w-full !h-12 !bg-primary-400 !text-dark-950 !font-semibold !rounded-xl
+                 hover:!bg-primary-300 transition-all duration-200
+                 disabled:opacity-60 disabled:cursor-not-allowed
+                 !shadow-glow hover:!shadow-glow-lg">
+          @if (loading()) {
+            <mat-spinner diameter="20" class="!inline-block mr-2"></mat-spinner>
+            Entrando...
+          } @else {
+            Entrar
+          }
+        </button>
+
+      </form>
+
+      <!-- Hint -->
+      <div class="mt-6 p-3 bg-dark-700/50 rounded-xl border border-dark-600/50">
+        <p class="text-xs text-dark-300 text-center">
+          <mat-icon class="!text-xs !w-4 !h-4 align-middle text-primary-400">info</mat-icon>
+          Login padrão: <span class="text-primary-400 font-mono">admin&#64;fatec.sp.gov.br</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
