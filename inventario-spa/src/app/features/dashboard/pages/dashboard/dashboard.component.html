@@ -6,6 +6,7 @@
     [categorias]="categorias()"
     [categoriaSelecionada]="categoriaSelecionada()"
     (categoriaChange)="filtrarPorCategoria($event)"
+    (novaCategoria)="abrirDialogCategoria()"
     (closeSidebar)="sidebarOpen.set(false)">
   </app-sidebar>
 
