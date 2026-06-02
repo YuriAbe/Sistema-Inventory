@@ -1,26 +1,22 @@
 # Sistema-Inventory
 
+![Java](https://img.shields.io/badge/Java-21-orange?logo=java&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.2.0-green?logo=spring-boot&logoColor=white) ![Angular](https://img.shields.io/badge/Angular-17-red?logo=angular&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue?logo=postgresql&logoColor=white) ![Maven](https://img.shields.io/badge/Maven-red?logo=apache-maven&logoColor=white) ![npm](https://img.shields.io/badge/npm-blue?logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-blue?logo=tailwindcss&logoColor=white) ![Spring Security](https://img.shields.io/badge/Spring_Security-6.2.0-green?logo=spring-security&logoColor=white) ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=black)
+
 ## 📦 Sistema de Gerenciamento de Inventário — Full Stack
 
-Sistema Full Stack para gerenciamento de inventário desenvolvido como atividade acadêmica, composto por uma API REST em Spring Boot e uma SPA (Single Page Application) em Angular.
+Este projeto é um sistema Full Stack para gerenciamento de inventário, desenvolvido como atividade acadêmica. Ele é composto por uma API REST construída com Spring Boot e uma SPA (Single Page Application) em Angular.
 
-O sistema permite o gerenciamento de produtos e categorias, oferecendo recursos de autenticação, cadastro, edição, exclusão, filtros e pesquisa em tempo real através de uma interface moderna e responsiva.
+O sistema oferece funcionalidades completas para o gerenciamento de produtos e categorias, incluindo autenticação, cadastro, edição, exclusão, filtros e pesquisa em tempo real. A interface é moderna e responsiva, garantindo uma experiência de usuário fluida.
 
 ---
 
 ## 🎯 Objetivo do Projeto
 
-Desenvolver uma aplicação completa seguindo conceitos modernos de desenvolvimento Full Stack:
+O principal objetivo deste projeto foi aplicar e integrar conceitos modernos de desenvolvimento Full Stack, tais como:
 
-* Backend em Spring Boot
-* Frontend em Angular
-* Arquitetura em camadas
-* Consumo de API REST
-* Integração Frontend ↔ Backend
-* Banco de dados PostgreSQL
-* Responsividade
-* Componentização
-* Boas práticas de desenvolvimento
+*   **Backend**: Spring Boot com arquitetura em camadas, Spring Data JPA e PostgreSQL.
+*   **Frontend**: Angular com componentização, consumo de API REST, e responsividade (Mobile First).
+*   **Integração**: Comunicação eficiente entre Frontend e Backend, seguindo boas práticas de desenvolvimento.
 
 ---
 
@@ -54,23 +50,23 @@ Desenvolver uma aplicação completa seguindo conceitos modernos de desenvolvime
 
 ### Backend
 
-* Java 21
-* Spring Boot
-* Spring Data JPA
-* Spring Security
-* Hibernate
-* PostgreSQL
-* Maven
-* Swagger / OpenAPI
+*   Java 21
+*   Spring Boot
+*   Spring Data JPA
+*   Spring Security
+*   Hibernate
+*   PostgreSQL
+*   Maven
+*   Swagger / OpenAPI
 
 ### Frontend
 
-* Angular 17
-* Angular Material
-* TailwindCSS
-* RxJS
-* TypeScript
-* Angular Signals
+*   Angular 17
+*   Angular Material
+*   TailwindCSS
+*   RxJS
+*   TypeScript
+*   Angular Signals
 
 ---
 
@@ -78,43 +74,32 @@ Desenvolver uma aplicação completa seguindo conceitos modernos de desenvolvime
 
 ### Autenticação
 
-* Login utilizando e-mail e senha
-* Endpoint dedicado de autenticação
-* Controle de sessão utilizando LocalStorage
-* AuthGuard protegendo rotas privadas
+*   Login com e-mail e senha.
+*   Endpoint de autenticação dedicado.
+*   Controle de sessão via LocalStorage.
+*   AuthGuard para proteção de rotas privadas.
 
 ### Produtos
 
-* Listagem de produtos
-* Cadastro de produtos
-* Edição de produtos
-* Exclusão de produtos
-* Busca por nome
-* Filtro por categoria
-* Exibição do preço formatado em Real (R$)
+*   Listagem, cadastro, edição e exclusão de produtos.
+*   Busca por nome e filtro por categoria.
+*   Exibição do preço formatado em Real (R$).
 
 ### Categorias
 
-* Listagem de categorias
-* Cadastro de categorias
-* Integração dinâmica com produtos
-* Atualização automática dos filtros
+*   Listagem e cadastro de categorias.
+*   Integração dinâmica com produtos e atualização automática de filtros.
 
 ### Interface
 
-* Dashboard responsivo
-* Sidebar de navegação
-* Cards modernos
-* Snackbar de notificações
-* Dialogs de confirmação
-* Loading Spinner
-* Skeleton Loading
-* Empty State
-* Dark Mode / Light Mode
+*   Dashboard responsivo com Sidebar de navegação.
+*   Cards modernos, Snackbar de notificações e Dialogs de confirmação.
+*   Loading Spinner, Skeleton Loading e Empty State.
+*   Suporte a Dark Mode / Light Mode.
 
 ---
 
-## 🔒 Credenciais de Acesso
+## 🔒 Credenciais de Acesso (para testes)
 
 | Campo  | Valor                                                 |
 | ------ | ----------------------------------------------------- |
@@ -176,13 +161,13 @@ git clone <repositorio-api>
 
 ### 2. Configurar PostgreSQL
 
-Criar um banco de dados:
+Crie um banco de dados com o nome `inventario`:
 
 ```sql
 CREATE DATABASE inventario;
 ```
 
-Configurar:
+Configure as propriedades de conexão no seu `application.properties` ou `application.yml`:
 
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/inventario
@@ -192,17 +177,19 @@ spring.datasource.password=senha
 
 ### 3. Executar
 
+Navegue até o diretório raiz do backend e execute:
+
 ```bash
 mvn spring-boot:run
 ```
 
-API disponível em:
+A API estará disponível em:
 
 ```text
 http://localhost:8080
 ```
 
-Swagger:
+E a documentação Swagger em:
 
 ```text
 http://localhost:8080/swagger-ui.html
@@ -212,19 +199,21 @@ http://localhost:8080/swagger-ui.html
 
 ## 🚀 Como Executar o Frontend
 
-### Instalar dependências
+### 1. Instalar dependências
+
+Navegue até o diretório raiz do frontend e execute:
 
 ```bash
 npm install
 ```
 
-### Executar
+### 2. Executar
 
 ```bash
 ng serve
 ```
 
-Aplicação disponível em:
+A aplicação estará disponível em:
 
 ```text
 http://localhost:4200
@@ -234,7 +223,7 @@ http://localhost:4200
 
 ## 🌐 Configuração de CORS
 
-Para permitir a comunicação entre Angular e Spring Boot:
+Para garantir a comunicação entre o frontend Angular e o backend Spring Boot, a seguinte configuração de CORS é utilizada:
 
 ```java
 @Configuration
@@ -290,22 +279,21 @@ GET /api/produtos/busca
 
 ## 📚 Conceitos Aplicados
 
-* API REST
-* DTO Pattern
-* Arquitetura em Camadas
-* Repository Pattern
-* Dependency Injection
-* Componentização
-* Lazy Loading
-* Feature First Architecture
-* Reactive Forms
-* Signals
-* Guards
-* Responsividade Mobile First
+*   API REST
+*   DTO Pattern
+*   Arquitetura em Camadas
+*   Repository Pattern
+*   Dependency Injection
+*   Componentização
+*   Lazy Loading
+*   Feature First Architecture
+*   Reactive Forms
+*   Signals
+*   Guards
+*   Responsividade Mobile First
 
 ---
 
 ## 👨‍💻 Autor
 
 Desenvolvido por: Yuri Ribeiro Abe 🔗 https://github.com/YuriAbe
-
